@@ -46,3 +46,7 @@ vim.opt.winminheight = 0
 vim.opt.winminwidth = 0
 vim.o.autoread = true
 vim.o.swapfile = false
+
+require('vim._core.ui2').enable({
+  enable = true
+})

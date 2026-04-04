@@ -22,7 +22,7 @@ local on_attach = function(_, bufnr)
     bufnr, 
     'n', 
     '<leader>ln', 
-    '<cmd>lua vim.diagnostics.goto_next()<CR>', 
+    '<cmd>lua vim.diagnostic.goto_next()<CR>', 
     { noremap = true, silent = true }
   )
 
@@ -30,7 +30,7 @@ local on_attach = function(_, bufnr)
     bufnr, 
     'n', 
     '<leader>lp', 
-    '<cmd>lua vim.diagnostics.goto_prev()<CR>', 
+    '<cmd>lua vim.diagnostic.goto_prev()<CR>', 
     { noremap = true, silent = true }
   )
 
@@ -38,7 +38,7 @@ local on_attach = function(_, bufnr)
     bufnr, 
     'n', 
     '<leader>lo', 
-    '<cmd>lua vim.diagnostics.open_float()<CR>', 
+    '<cmd>lua vim.diagnostic.open_float()<CR>', 
     { noremap = true, silent = true }
   )
 end
