@@ -1,7 +1,6 @@
 require('config.plugins.hooks')
 require('config.plugins.pairs')
 require('config.plugins.plenary')
-require('config.plugins.blink')
 require('config.plugins.oil')
 require('config.plugins.which_key')
 require('config.plugins.flash')

@@ -43,12 +43,24 @@ local on_attach = function(_, bufnr)
   )
 end
 
-local capabilities = require('blink.cmp').get_lsp_capabilities()
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client_id = args.data.client_id
+    if not client_id then
+      return
+    end
 
-vim.lsp.config('*', {
-  on_attach = on_attach,
-  capabilities = capabilities
+    local client = vim.lsp.get_client_by_id(client_id)
+    if client and client:supports_method("textDocument/completion") then
+      -- Enable native LSP completion for this client + buffer
+      vim.lsp.completion.enable(true, client_id, args.buf, {
+        autotrigger = true
+      })
+    end
+  end
 })
+
+vim.lsp.config('*', { on_attach = on_attach })
 
 vim.diagnostic.config({
   virtual_lines = {

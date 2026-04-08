@@ -47,6 +47,11 @@ vim.opt.winminwidth = 0
 vim.o.autoread = true
 vim.o.swapfile = false
 
+-- native completion
+vim.opt.completeopt = 'menu,menuone,noselect,popup'
+vim.o.autocomplete = true
+vim.opt.pumborder = 'rounded'
+
 require('vim._core.ui2').enable({
   enable = true
 })
